@@ -1,7 +1,19 @@
 # Practical Object-Oriented Design: An Agile Primer Using Ruby - Sandi Metz
 
-So the following is the distillation of the main takeaways I had from read
-All of this needs to be run through to turn it into a usable thing that can ultimately be an article
+When presented with a blank page (or the dev equivalent of an empty project) I found myself somewhat stuck. While I’ve come to learn to say no to inertia and move forward in the best way I knew how I still felt that there was something missing.
+
+What was missing was actually very apparent. A complete lack of practical knowledge for developing in an object oriented paradigm. I was fully aware of the principles of OOP, and well capable of working in an existing codebase, but when I was staring at a blank sheet of paper before me it was a different story.
+
+That’s the state of affairs that led to me seeking, finding and reading Practical Object Oriented Design by Sandi Metz. Why this book? I’m working in ruby and it came well recommended by trusted senior colleagues as well as on the ultimate source of truth that is Reddit.
+
+As with all of these notes they are as much a reference for myself as for public consumption. A means of documenting my learnings in public and encouraging myself to build something useful at the same time. - move this to a more generic about page or whatever.
+
+I really liked how Metz makes it clear that as a junior dev starting out you will attempt to implement the guidance in the book incorrectly and in the wrong place but that over time these somewhat subjective skills will be fine tuned.
+
+Ok that’s enough of a background let’s jump in to what I learned…
+
+The following is a breakdown and distillation of the main points that I took note of in the book which I hope can provide a good reference for improving my Object oriented design.
+
 
 ## Art vs Science - Motivation
 There are many points at which you can make decisions which have consequences for the future.
