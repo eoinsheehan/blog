@@ -1,0 +1,3 @@
+notes from doing the odin project intro to react.
+
+I've used this as my means of getting my personal site up and running...
