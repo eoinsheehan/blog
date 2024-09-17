@@ -1,4 +1,4 @@
-# Practical Object-Oriented Design: An Agile Primer Using Ruby - Sandi Metz
+# OOP
 
 When presented with a blank page (or the dev equivalent of an empty project) I found myself somewhat stuck. While I’ve come to learn to say no to inertia and move forward in the best way I knew how I still felt that there was something missing.
 
