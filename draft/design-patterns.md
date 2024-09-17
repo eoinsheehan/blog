@@ -64,8 +64,8 @@ Need to keep things loose and flexible to make it easier to complete the enivata
 - keyword arguments may be passed in any order and there is a description of parameters with the sender as well as the receiver (where the method is defined)
 
 ## Single Responsibility ( "S" in SOLID )
-A class should be cohesive in that everything the class does should be highly related to its purpose
-- Methods, like classes, should have a single responsibility.
+A class should be cohesive in that everything the class does should be highly related to its purpose.
+Methods, like classes, should have a single responsibility.
 by keeping single responsibility with methods will assist when the time comes to make a new class.
 There is a link between single responsibility and dependencies.
 By virtue of the fact that classes have a single responsibility they will have to communicate with each other.
@@ -73,7 +73,9 @@ By virtue of the fact that classes have a single responsibility they will have t
 ## Abstraction
 The wonderful thing about abstraction is that they represent common, stable qualities.
 Abstractions by their very nature tend to have many dependencies but will not change very much
-Duck typing reveals abstractions that may otherwise not be visible
+Duck typing reveals abstractions that may otherwise not be visible.
+When it comes to abstractions it is better to have a sample of a number of similar classes to inform the creation of
+the abstract class.
   
 ## Interface Segregation ( I in SOLID)
 The conversation between objects takes place using their interfaces;
