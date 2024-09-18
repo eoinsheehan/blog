@@ -1,6 +1,10 @@
 # Ruby (some of the more interesting parts) 
 Discuss some of the key features
 - what are symbols
+unique identifiers
+need to check also but they actually point to a value and not a reference I think?
+they are scoped to their classes so that methods woth the same name in different classes can be stored as symbols.
+similarly different hashes can have the save key values as symbols which woild have to be scoped also?
 - discuss that what MRI is and YARV
 - Blocks in ruby (Passing execution control and how it works)
 - There is like the pretzel operator or whatever too
