@@ -34,6 +34,9 @@ It then tries to require the gem again now that its lib directory has been added
 Sidenote:
 How ruby manages caching classes in the require method
 
+Sidenote:
+with rbenv gems are loaded into the relevant version as stated in the .ruby-version file. when you run bundle install it updates the gems that are in this location as per the Gemfile (could be good to do a quick code example here with the different stages)
+
 So after that slightly more involved journey with require we can look at require_relative. This one is pretty self explanatory as it loads files relative to the file in which it was invoked and will throw an error if that relative path does not exist.
 
 The final loading method which I am going to cover is autoload. The purpose of autoload is to speed up initialisation by lazily loading files. It takes two arguments: a module and a filename. It registers a filename to be loaded the first time that the module is referenced in the application. It will then load the file using the Kernel#require method under the hood.
