@@ -1,3 +1,5 @@
+As a junior dev I have thoroughly enjoyed working with the rails framework. It gets things moving quickly with sensible defaults in line with its mantra of convention over configuration.
+
 ok so its probably time to look tk get this sorted as its pretty straightforward really.
 
 zeitwerk in rails takea care of autoloading.
