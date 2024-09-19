@@ -422,5 +422,12 @@ Tuesday 13th August
 
 Implemented first API which felt pretty decent. Used swagger to comply with OpenAPI and provide a convenient UI for testing the api.
 
+Thursday September 9th
+Ok so I was very much lost in the woods as per the analogy of expertise from the 10000 hours podcast where it was said that a measure of excellence was to be comfortable wherever you are dropped in a codebase, or in this case in the woods, and that you can make your way through.
+I was very much in the state of going around in circles and not knowing where to go to find the right path.
+Then even this experience was preventing me from finding my way out, addling my brain.
+But then I did think of that reference in Infinite Jest about pursuing excellence where it says that many quit just when they are at the end of a plateau as they don't know just how close they are to breaking through.
+This was very much me over the last little while but I will get better. 
+
 
 

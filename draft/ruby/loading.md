@@ -1,19 +1,4 @@
-# Ruby (some of the more interesting parts) 
-Discuss some of the key features
-- what are symbols
-unique identifiers
-need to check also but they actually point to a value and not a reference I think?
-they are scoped to their classes so that methods woth the same name in different classes can be stored as symbols.
-similarly different hashes can have the save key values as symbols which woild have to be scoped also?
-- discuss that what MRI is and YARV
-- Blocks in ruby (Passing execution control and how it works)
-- There is like the pretzel operator or whatever too
-- What is the enumerable class
-- Inheritance in Ruby (Multiple inheritence is somewhat available via modules)
-- The Class hierarchy diagram or whatever it's called
-- chat about the metaprogramming aspects a little and reference Paolo Perrotta's book
-
-Some of the good reaources were the rubyapi.org documentation for exploring the fratures of the language.
+# Ruby loading....
 
 I wanted to have a more solid understanding of the inner workings of ruby and so I did up the note on ruby loading. This was a means of clarifying the process for the interpreter getting access to additional ruby written in gems.
 
@@ -34,8 +19,6 @@ It then tries to require the gem again now that its lib directory has been added
 Sidenote:
 How ruby manages caching classes in the require method
 
-Sidenote:
-with rbenv gems are loaded into the relevant version as stated in the .ruby-version file. when you run bundle install it updates the gems that are in this location as per the Gemfile (could be good to do a quick code example here with the different stages)
 
 So after that slightly more involved journey with require we can look at require_relative. This one is pretty self explanatory as it loads files relative to the file in which it was invoked and will throw an error if that relative path does not exist.
 
@@ -50,21 +33,11 @@ RubyGems Basics
 Understanding ruby load, require, gems, bundler and rails autoloading from the bottom up | by cstack | Medium
 How require loads a gem - Ryan Bigg
 
-Ruby Object Model
-Exploring the docs that are available at rubyapi.org my lack of hnderstanding of the class hierarchy in the ruby onject model became apparent. 
-I dabbled somewhat with Paolo Perrottas Meta Programming book. The cyclical like relationship between class and Module was challenging and it was also interesting to note that all user defined classes inherit from the Object class. The other main learning I had was that there can be a disconnection between inheritance and the ancestor of an object??
-These learnings from metaprogramming were all from the beginning of the book but I felt that the more advanced topics would not be the best use of my time right now and that would be better held off for a future date.
+Additions:
+I also just had to clarify in my head this morning how Bundler manages the gems using the Gemfile.
+Gems are installed in the rbenv (that's what we are using) ruby version in operation.
+So in theory if you don't bundle install you could use the incorrect version of that.
 
-Out of Metaprogramming the main learning was a more solid understanding of the class hierarchy in the ruby object model. 
-Constant lookup
-Chapter 6 of Ruby under a microscope provided a detailed breakdown of constant lookup in ruby. Starting out using ruby on rails had meant that some of these features of the language were hidden using the autoloading feature of rails.
-
-## Rails
-- What is MVC at a high level
-- Some of the key components of the rails frameworks
-- Some of the key commands
-- The startup process in rails
-- The lifecycle of a request in rails
-- Database chat
-   - Discuss how this is configured and then it is all pretty straightforward after this
-
+Sidenote:
+with rbenv gems are loaded into the relevant version as stated in the .ruby-version file. when you run bundle install it updates the gems that are in this location as per the Gemfile (could be good to do a quick code example here with the different stages)
+Bundle has it's own implementation of the require method which does additional checking on the versioning as per the Gemfiles

@@ -47,6 +47,7 @@ Question:
 - What is best practice endpoint naming conventions?
 - Should we be using POST requests with a payload or passing the relevant details in the HTTP request path?
 - Using RSwag you can generate the openapi specification.
+    N.B. we normally don't actually want to be hitting the api in the test but can just test the response codes.
     - This seems to just check the status code by default no other details.
     - Perhaps it checks that the response is in the same shape as the schema also?
     - This is indeed what happens as per the following source:
