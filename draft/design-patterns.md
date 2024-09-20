@@ -21,7 +21,7 @@ Before I get into the details I am assuming a decent level of experience with OO
 One of the challenges to object oriented design is that while there is guidance it is still open to interpretation. However it is highlighted that the methods outlined in this book have been shown to improve code quality against a number of reliable metrics. 
 
 ## Postponing design decisions
-A piece of guidance that was initially surprising was that it can be better to delay design decisions. Even when there are some initial warning signs, to be able to make a decision from a more informed viewpoint. You are looking to work towards a known future state which is impossible and so a useful benchmark of high quality could be that it is good enough rather than perfect. Then when the time comes to implement best practice this can have a subsequent benefit of revealing good design.
+Some advice that was initially surprising was that it can be better to delay design decisions. Even when there are some initial warning signs it can often be better to make a decision from a more informed viewpoint. In an environemnt where you are working towards an unknown future state a useful benchmark could be to be good enough rather than perfect. Then when the time comes to implement best practice this can have a subsequent benefit of revealing good design also.
 
 ### Key takeaway: If the cost of delaying the decision is similar to the cost of changing right now then it is best to delay. A good example of this is if you have a method where the flow of control is managed based on the class of an object.
 
@@ -53,7 +53,7 @@ Need to keep things loose and flexible to make it easier to complete the enivata
 - look to use keyword arguments to remove this dependency
 - keyword arguments may be passed in any order and there is a description of parameters with the sender as well as the receiver (where the method is defined)
 
-## Single Responsibility ( "S" in SOLID )
+## Single Responsibility
 A class should be cohesive in that everything the class does should be highly related to its purpose.
 Methods, like classes, should have a single responsibility.
 by keeping single responsibility with methods will assist when the time comes to make a new class.
