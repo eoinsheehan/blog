@@ -1,8 +1,8 @@
 # OOD
 
-The point in time had arrived where I as comfortable with completing tasks in ruby which I was working with everyday. While I’ve come to learn to say no to inertia and move forward in the best way I knew how I still felt that there was something missing.
+The moment had arrived where I was comfortable with completing tasks in ruby which I was working with everyday. While I’ve come to learn to say no to inertia, and move forward in the best way I knew how, I still felt that there was something missing.
 
-What was missing was actually very apparent. A complete lack of practical knowledge for developing in an object oriented paradigm. I was fully aware of the principles of OOP, and well capable of working in an existing codebase, but when I was staring at a blank sheet of paper before me it was a different story.
+What was missing was actually very apparent. A lack of practical knowledge for developing in an object oriented paradigm. I was fully aware of the principles of OOP, and well capable of working in an existing codebase, but when I was staring at a blank sheet of paper before me it was a different story.
 
 That’s the state of affairs that led to me seeking, finding and reading Practical Object Oriented Design by Sandi Metz. Why this book? I’m working in ruby and it came well recommended by trusted senior colleagues as well as on the ultimate source of truth that is Reddit.
 
@@ -18,12 +18,15 @@ Before I get into the details I am assuming a decent level of experience with OO
 - The foundation of OOP is a measage based system where methods are invoked by sending messages.
 - Ruby comes with a number of core classes predefined such as String, Array, Hash etc.
 
-One of the challenges to object oriented design is while there is guidance it is still open to interpretation. However it is highlighted that the methods outlined in this book have been shown to improve code quality against a number of reliable metrics. It can be better to delay design decisions, even when there are some initial warning signs, to be able to make a decision from a more informed viewpoint. You are looking to work towards a known future state which is impossible and so a useful benchmark of high quality could be that it is good enough rather than perfect.
+One of the challenges to object oriented design is that while there is guidance it is still open to interpretation. However it is highlighted that the methods outlined in this book have been shown to improve code quality against a number of reliable metrics. 
+
+## Postponing design decisions
+A piece of guidance that was initially surprising was that it can be better to delay design decisions. Even when there are some initial warning signs, to be able to make a decision from a more informed viewpoint. You are looking to work towards a known future state which is impossible and so a useful benchmark of high quality could be that it is good enough rather than perfect. Then when the time comes to implement best practice this can have a subsequent benefit of revealing good design.
 
 ### Key takeaway: If the cost of delaying the decision is similar to the cost of changing right now then it is best to delay. A good example of this is if you have a method where the flow of control is managed based on the class of an object.
 
 ## Dependencies
-The issue that could occur from the delaying this decision for too long is that the costs of change have become very high. The more dependencies that an object has then it is much more likely that making change to such an object will be much harder. When objects know too much they have expectations about the world they live in. 
+The issue that can arise from the delaying design decision for too long is that the costs of change will have become very high. The more dependencies that an object has the more likely it is that changing such an object will be harder. When objects know too much they have expectations about the world they live in. 
 
 ### Look to simplify the dependency
 If an object is dependent on the position of an argument in an array then it is highly dependent. Much like the previous suggestion of delaying decision making radical changes need not be introduced immediately and instead a step can be made in the right direction. This could be as simple as wrapping such a structure in a Struct object as opposed to an Array. This is a step towards a dedicated class with a lightweight approach and will make it easier to identify where changes are required when the time arrives.
