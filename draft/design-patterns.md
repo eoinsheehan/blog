@@ -33,21 +33,19 @@ A logical next step could then be that a dedicated class is required in the futu
 Then you could have dependency injection
 which then brings us nicely onto interfaces.
 
+subtle dependenicies - order of arguments
 Mention keyword arguments too
 
 Need to be most concious of this with classes that have lots of dependencies and are likely to change.
 Insert sketch of graph from book
 
 ## Dependencies ( related to "D" in SOLID of Dependency Inversion )
-
 dependency injection
-with dependency injection the depedency is on something more abstract i.e. that an object responds to a message rather that a particular class.
 The following highlights that point rather well...
 - One of the benefits of using an interpreted language is that the dependency is on a class that implements an interface which is much more flexible
 - If you are mindful of dependencies and develop a habit of routing injecting them, your classes will naturally be loosely coupled
 If you let class references fall where they may then your classes will resemble a woven mat rather than independent objects.
 Need to keep things loose and flexible to make it easier to complete the enivatable refactoring without a terribly high cost.
-- Quarantine dependencies.
 - subtle dependency - order of arguments
 - look to use keyword arguments to remove this dependency
 - keyword arguments may be passed in any order and there is a description of parameters with the sender as well as the receiver (where the method is defined)
@@ -82,19 +80,10 @@ The more messages that it responds to, the more that can be sent to it and, back
 DRY code tolerates change because any change in behavior can be made by changing code in just one place.
 - Good practices reveal design
 - Avoid the need for comments where possible - look to move this into it's own method
-- The code is not perfect, but in some ways, it achieves a higher standard: it is good enough.
-- Referring to a class by it's name creates a coupling.
-as an alternative could this be passed in the message to the class but rather than being tied to the object 
-only be concerned if it responsds to certain messages.
-- When a class has many dependents alarm bells should be ringing.
-note: - there is like a formula mentioned at some point in reference to this kind of thing.
-you want to be in a space where the things that change a lot do not have many dependencies.
-this is far more important than if there are more dependencies in classes that do not change all that much
 - Isolating dependencies allows objects to quickly adapt to unexpected changes, this seems like it can be the first step to prevent having references to other classes 
 scattered throughout your definition of the object.
 - Injecting dependencies creates loosely coupled objects that can be reused in novel ways as the dependency can be on a class implementing an interface.
 - Depending on abstractions decreases the likelihood of facing these changes as these classes tend to be more stable.
-- Approach the design of the application from the point of the messages that are being passed not the real world objects that may be easier to concieve.
 - Either do not test private methods or, if you must, segregate those tests from the tests of public methods.
 - Strongly consider when chaining methods together to stay in line with the Law of Demeter ("only talk to your neighbour")
 - violations of the law of demeter are an indication that your public interfaces are lacking
