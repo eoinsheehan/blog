@@ -33,25 +33,24 @@ If an object is dependent on the position of an argument in an array then it is 
 
 A logical next step could then be that a dedicated class is required in the future.
 
-Then you could have dependency injection
-which then brings us nicely onto interfaces.
+### Isolate Dependencies
+Isolating dependencies will keep your code loosely couple and open to change. Encapsulation will prevent elements of a class from spreading at will. --move this down a paragraph -- Dependency injection (DI) will remove reference to a class by name which is itself a subtle dependency much like positional arguments. Keyword arguments can be used in place of positional arguments which are less likely to lead to confusion as all arguments of the method are visible on the sender as well as the receiver. This will also have benefits in testing as an mock object can stand in for a concrete implementation.
 
-subtle dependenicies - order of arguments
-Mention keyword arguments too
+"If you let class references fall where they may then your classes will resemble a woven mat rather than independent objects"
 
+The dependency on a particular class is replaced with one that assumes that an object implements an interface.
+
+##
+
+check quote - "duck typing implements interfaces which reveal anstractions"
+
+### Summary of Dependencies
 Need to be most concious of this with classes that have lots of dependencies and are likely to change.
 Insert sketch of graph from book
 
-## Dependencies ( related to "D" in SOLID of Dependency Inversion )
-dependency injection
-The following highlights that point rather well...
+## Dependencies
 - One of the benefits of using an interpreted language is that the dependency is on a class that implements an interface which is much more flexible
-- If you are mindful of dependencies and develop a habit of routing injecting them, your classes will naturally be loosely coupled
-If you let class references fall where they may then your classes will resemble a woven mat rather than independent objects.
-Need to keep things loose and flexible to make it easier to complete the enivatable refactoring without a terribly high cost.
-- subtle dependency - order of arguments
-- look to use keyword arguments to remove this dependency
-- keyword arguments may be passed in any order and there is a description of parameters with the sender as well as the receiver (where the method is defined)
+If you are mindful of dependencies and develop a habit of routing injecting them, your classes will naturally be loosely coupled.
 
 ## Single Responsibility
 A class should be cohesive in that everything the class does should be highly related to its purpose.
@@ -60,7 +59,7 @@ by keeping single responsibility with methods will assist when the time comes to
 There is a link between single responsibility and dependencies.
 By virtue of the fact that classes have a single responsibility they will have to communicate with each other.
 
-## Abstraction
+## Abstraction -- move this below interfaces as interfaces reveal abstractions
 The wonderful thing about abstraction is that they represent common, stable qualities.
 Abstractions by their very nature tend to have many dependencies but will not change very much
 Duck typing reveals abstractions that may otherwise not be visible.
@@ -78,15 +77,11 @@ The more messages that it responds to, the more that can be sent to it and, back
 "You don’t send messages because you have objects, you have objects because you send messages."
 - in line with the public interface framing the sender should not be concerned with the internal implementation details rather that they get what they want at the end.
 
-## Techniques to use
+## Things to look out for
+The following a some techniques to keep top of mind when looking to keep objects loosely coupled and open to change:
 
-DRY code tolerates change because any change in behavior can be made by changing code in just one place.
-- Good practices reveal design
-- Avoid the need for comments where possible - look to move this into it's own method
-- Isolating dependencies allows objects to quickly adapt to unexpected changes, this seems like it can be the first step to prevent having references to other classes 
-scattered throughout your definition of the object.
-- Injecting dependencies creates loosely coupled objects that can be reused in novel ways as the dependency can be on a class implementing an interface.
-- Depending on abstractions decreases the likelihood of facing these changes as these classes tend to be more stable.
+- DRY code tolerates change because any change in behavior can be made by changing code in just one place.
+- If you feel that a comment isnecessary this could be a candidate for moving behaviour into a dedicated method.
 - Either do not test private methods or, if you must, segregate those tests from the tests of public methods.
 - Strongly consider when chaining methods together to stay in line with the Law of Demeter ("only talk to your neighbour")
 - violations of the law of demeter are an indication that your public interfaces are lacking
@@ -111,6 +106,3 @@ This makes it easier for testing
 this is mildly interesting
 Protected methods allow explicit receivers as long as the receiver is self or an instance of the same class or subclass of self.
 implicit receiver is self which is the reference to the class which is in scope in that point in the application.
-
-#### Monkey patching 
-Making changes to base classes - normally to be avoided
