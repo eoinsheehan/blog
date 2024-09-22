@@ -25,6 +25,10 @@ Out of Metaprogramming the main learning was a more solid understanding of the c
 Constant lookup
 Chapter 6 of Ruby under a microscope provided a detailed breakdown of constant lookup in ruby. Starting out using ruby on rails had meant that some of these features of the language were hidden using the autoloading feature of rails.
 
+Reference of self depends on the context.
+within an instance method it refers to the object
+within a class method it refers to the class.
+
 ## Rails
 - What is MVC at a high level
 - Some of the key components of the rails frameworks
