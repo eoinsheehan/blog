@@ -29,6 +29,9 @@ Reference of self depends on the context.
 within an instance method it refers to the object
 within a class method it refers to the class.
 
+Funky syntax:
+& operator does bitwise operation on integer and the like but actually does set like operations on sets and arrays.
+
 ## Rails
 - What is MVC at a high level
 - Some of the key components of the rails frameworks
