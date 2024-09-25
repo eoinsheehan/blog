@@ -72,6 +72,39 @@ Logarithmic Scalability.
 
 The logarithm of a number is the exponent to which the base must be raised in order to produce the number. The size of the index is the number of entries per branch node to the power of the depth of the tree. All combinations of the number of checks that would have to be made to get the right entry.
 
-### Slow indexes - Part 1
+## Slow indexes - Part 1
 
 This is where I’m picking up…
+
+I actually have much better insight on using the index since I was last reading this. I went off and watched some videos from Hussein Nasser and read some articles on pocket.
+I now have a much better knowledge of B tree as an index, how it is implemented, i.e. sequentially in a balanced manner, and that it needs to be updated after every write and therefore has implications for performance.
+
+Even a single leaf node may contain many hits - often hundreds. The corresponding table data is usually scattered across many table blocks.
+
+Question:
+What are tables blocks? i.e. how are tables actually stored on disk?
+
+An index lookup requires three steps:
+1. Tree traversal
+2. Following the leaf node chain
+If the query involves a range of values (e.g., SELECT * WHERE age BETWEEN 20 AND 30), the database engine may need to traverse through multiple consecutive leaf nodes to retrieve all matching keys in the range. - straight from Chatgippity
+Also if the values are non unique.
+3. Fetching the table data
+
+The orifin of the slow indexes mythi is the misbelief that an index lookup just traverses the tree and hence the idea that a slow index must be caused by a "broken" or "unbalanced" tree.
+
+
+Binary search or logarithmic search are used for deciding where to go.
+
+## Where clause
+.. Now I am up to here...
+
+The where clause defines the search condition of a SQL statement, and it thus falls into the core functional domain of an index: find data quickly.
+However it is often phrased poorly so that the database has to scan a large part of the index.
+The result: a poorly written where clause is the first ingredient of a slow query.
+
+This chapter explains how different operators affect index usage and how to make sure that an index is usable for as many queries as possible.
+
+
+
+
