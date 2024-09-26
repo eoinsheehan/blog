@@ -1,6 +1,6 @@
 # OOD
 
-The moment had arrived where I was comfortable with completing tasks in ruby which I was working with everyday. While I’ve come to learn to say no to inertia, and move forward in the best way I knew how, I still felt that there was something missing.
+The moment had arrived where I was comfortable with completing daily tasks in ruby. While I’ve come to learn to say no to inertia, and move forward in the best way I knew how, I still felt that there was something missing.
 
 What was missing was actually very apparent. A lack of practical knowledge for developing in an object oriented paradigm. I was fully aware of the principles of OOP, and well capable of working in an existing codebase, but when I was staring at a blank sheet of paper before me it was a different story.
 
@@ -8,7 +8,7 @@ That’s the state of affairs that led to me seeking, finding and reading Practi
 
 As with all of these notes they are as much a reference for myself as for public consumption. A means of documenting my learnings in public and encouraging myself to build something useful at the same time. - move this to a more generic about page or whatever.
 
-I really liked how Metz makes it clear that as a junior dev starting out you will attempt to implement the guidance in the book incorrectly and in the wrong place but that over time these somewhat subjective skills will be fine tuned.
+I really liked how Metz makes it clear that as a junior dev starting out you will attempt to implement the guidance in the book incorrectly and in the wrong place but that over time the application of these principles will become more refined.
 
 The following is a breakdown and distillation of the main points that I took note of in the book which I hope can provide a good reference for improving my Object oriented design.
 
@@ -31,16 +31,20 @@ Some advice that was initially surprising was that it can be better to delay des
 ## Dependencies
 
 -- Quote --
+
 The issue that can arise from the delaying design decision for too long is that the costs of change will have become very high. The more dependencies that an object has the more likely it is that changing such an object will be harder. When objects know too much they have expectations about the world they live in. 
 
 ### Look to simplify the dependency
-
 -- quote about small steps --
+
 If an object is dependent on the position of an argument in an array then it is highly dependent. Much like the previous suggestion of delaying decision making radical changes need not be introduced immediately and instead a step can be made in the right direction. This could be as simple as wrapping such a structure in a Struct object as opposed to an Array. This is a step towards a dedicated class with a lightweight approach and will make it easier to identify where changes are required when the time arrives.
 
 A logical next step could then be that a dedicated class is required in the future.
 
 ### Isolate Dependencies
+
+-- quote --
+
 Isolating dependencies will keep your code loosely couple and open to change. Encapsulation will prevent elements of a class from spreading at will. --move this down a paragraph -- Dependency injection (DI) will remove reference to a class by name which is itself a subtle dependency much like positional arguments. Keyword arguments can be used in place of positional arguments which are less likely to lead to confusion as all arguments of the method are visible on the sender as well as the receiver. This will also have benefits in testing as an mock object can stand in for a concrete implementation.
 
 "If you let class references fall where they may then your classes will resemble a woven mat rather than independent objects"
@@ -51,37 +55,36 @@ The dependency on a particular class is replaced with one that assumes that an o
 
 check quote - "duck typing implements interfaces which reveal anstractions"
 
-### Summary of Dependencies
-Need to be most concious of this with classes that have lots of dependencies and are likely to change.
-Insert sketch of graph from book
+Its important to be particularaly concious of dependencies with classes that have lots of dependencies and are likely to change.
+
+The following graph provides a good abtract summary of the signs to look out for and equally the cases which are not as worrying. 
+
+-- Insert sketch of graph from book --
+
+The goal is to look to avoid situations in the top right where classes that are likely to change have many dependencies. Whereas all other states are more likely not as much of an issue as they do not have this dangerous combination.
+
+-- quote of avoiding top right --
 
 ## Dependencies
 - One of the benefits of using an interpreted language is that the dependency is on a class that implements an interface which is much more flexible
 If you are mindful of dependencies and develop a habit of routing injecting them, your classes will naturally be loosely coupled.
 
 ## Single Responsibility
-A class should be cohesive in that everything the class does should be highly related to its purpose.
-Methods, like classes, should have a single responsibility.
-by keeping single responsibility with methods will assist when the time comes to make a new class.
-There is a link between single responsibility and dependencies.
-By virtue of the fact that classes have a single responsibility they will have to communicate with each other.
+A class should be cohesive in that everything the class does should be highly related to its purpose. Methods, like classes, should have a single responsibility. by keeping single responsibility with methods will assist when the time comes to make a new class. There is a link between single responsibility and dependencies. By virtue of the fact that classes have a single responsibility they will have to communicate with each other.
 
 ## Abstraction -- move this below interfaces as interfaces reveal abstractions
 
 -- quote on interfaces reavealing abstractions --
-The wonderful thing about abstraction is that they represent common, stable qualities.
-Abstractions by their very nature tend to have many dependencies but will not change very much
-Duck typing reveals abstractions that may otherwise not be visible.
-When it comes to abstractions it is better to have a sample of a number of similar classes to inform the creation of
+
+The wonderful thing about abstraction is that they represent common, stable qualities. Abstractions by their very nature tend to have many dependencies but will not change very much. Duck typing reveals abstractions that may otherwise not be visible. When it comes to abstractions it is better to have a sample of a number of similar classes to inform the creation of
 the abstract class.
   
 ## Interface Segregation ( I in SOLID)
 
 -- quote on interfaces --
+
 The conversation between objects takes place using their interfaces;
-In Solid principles the "I" stands for interface segregation. i.e. that larger interfaces should be split into smaller ones
-Deciding on the messages that an object public responds to should be carefully considered.
-The more messages that it responds to, the more that can be sent to it and, back to our friend of dependencies once more, this will make things more likely to get out of hand.
+In Solid principles the "I" stands for interface segregation. i.e. that larger interfaces should be split into smaller ones. Deciding on the messages that an object public responds to should be carefully considered. The more messages that it responds to, the more that can be sent to it and, back to our friend of dependencies once more, this will make things more likely to get out of hand.
 - Interfaces should reveal it's primary responsibilies, and that in itself should encompass a Single responsibility
 - private interfaces on the other hand handle implementation details which the sender does not need to know
 - public interfaces should be throughly documented in tests.
