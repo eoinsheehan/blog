@@ -1,6 +1,6 @@
 # OOD
 
-The moment had arrived where I was comfortable with completing daily tasks in ruby. While I’ve come to learn to say no to inertia, and move forward in the best way I knew how, I still felt that there was something missing.
+I was was at the point in my developer journey where I was comfortable with completing daily tasks in ruby. While I’ve come to learn to say no to inertia, and move forward in the best way I knew how, I still felt that there was something missing.
 
 What was missing was actually very apparent. A lack of practical knowledge for developing in an object oriented paradigm. I was fully aware of the principles of OOP, and well capable of working in an existing codebase, but when I was staring at a blank sheet of paper before me it was a different story.
 
@@ -45,17 +45,21 @@ A logical next step could then be that a dedicated class is required in the futu
 
 -- quote --
 
-Isolating dependencies will keep your code loosely couple and open to change. Encapsulation will prevent elements of a class from spreading at will. --move this down a paragraph -- Dependency injection (DI) will remove reference to a class by name which is itself a subtle dependency much like positional arguments. Keyword arguments can be used in place of positional arguments which are less likely to lead to confusion as all arguments of the method are visible on the sender as well as the receiver. This will also have benefits in testing as an mock object can stand in for a concrete implementation.
+Isolating dependencies will keep your code loosely coupled and open to change. The following is a number of ways of achieving greater isolation. Encapsulation will prevent elements of a class from spreading at will. --move this down a paragraph to link in with rhe later paragraph -- Dependency injection (DI) will remove reference to a class by name which is itself a subtle dependency much like positional arguments. 
+
+-- Isolate positinal arguments as a dependency-- Keyword arguments can be used in place of positional arguments which are less likely to lead to confusion as all arguments of the method are visible on the sender as well as the receiver. This will also have benefits in testing as an mock object can stand in for a concrete implementation.
 
 "If you let class references fall where they may then your classes will resemble a woven mat rather than independent objects"
 
-The dependency on a particular class is replaced with one that assumes that an object implements an interface.
+With DI the dependency on a particular class is replaced with one that assumes that an object implements an interface.
+-- mive this under DI
 
 ##
 
 check quote - "duck typing implements interfaces which reveal anstractions"
 
-Its important to be particularaly concious of dependencies with classes that have lots of dependencies and are likely to change.
+Its important to be particularaly concious of classes that have lots of dependencies and are likely to change.
+-- need to check that its not that many classes are dependent on this class.
 
 The following graph provides a good abtract summary of the signs to look out for and equally the cases which are not as worrying. 
 
@@ -66,6 +70,7 @@ The goal is to look to avoid situations in the top right where classes that are 
 -- quote of avoiding top right --
 
 ## Dependencies
+
 - One of the benefits of using an interpreted language is that the dependency is on a class that implements an interface which is much more flexible
 If you are mindful of dependencies and develop a habit of routing injecting them, your classes will naturally be loosely coupled.
 
@@ -76,7 +81,12 @@ A class should be cohesive in that everything the class does should be highly re
 
 -- quote on interfaces reavealing abstractions --
 
-The wonderful thing about abstraction is that they represent common, stable qualities. Abstractions by their very nature tend to have many dependencies but will not change very much. Duck typing reveals abstractions that may otherwise not be visible. When it comes to abstractions it is better to have a sample of a number of similar classes to inform the creation of
+By implementing interfaces we may be able to arrive at a truly representative abstraction of a number of classes.
+-- check if abstraction applies across a number of types rather than being kust top of the tree --
+To be considered a good representative it is often best to have a number of sample cases that implement this abstraction rather than looking to build the abstraction prematurely.
+The wonderful thing about abstraction is that they represent common, stable qualities. Abstractions by their very nature tend to have many dependencies but will not change very much. Duck typing reveals abstractions that may otherwise not be visible. -- Here is the quote to cut out --
+
+When it comes to abstractions it is better to have a sample of a number of similar classes to inform the creation of
 the abstract class.
   
 ## Interface Segregation ( I in SOLID)
