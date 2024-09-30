@@ -22,20 +22,17 @@ One of the challenges to object oriented design is that while there is guidance 
 
 ## Postponing design decisions
 
--- Quote --
+> "When the future cost of doing nothing is the same as the current cost, postpone the decision."
 
 Some advice that was initially surprising was that it can be better to delay design decisions. Even when there are some initial warning signs it can often be better to make a decision from a more informed viewpoint. In an environemnt where you are working towards an unknown future state a useful benchmark could be to be good enough rather than perfect. Then when the time comes to implement best practice this can have a subsequent benefit of revealing good design also.
 
 ### Key takeaway: If the cost of delaying the decision is similar to the cost of changing right now then it is best to delay. A good example of this is if you have a method where the flow of control is managed based on the class of an object.
 
 ## Dependencies
-
--- Quote --
-
 The issue that can arise from the delaying design decision for too long is that the costs of change will have become very high. The more dependencies that an object has the more likely it is that changing such an object will be harder. When objects know too much they have expectations about the world they live in. 
 
 ### Look to simplify the dependency
--- quote about small steps --
+> Just as you can use a method to wrap an instance variable, you can use the Ruby Struct class to wrap a structure.
 
 If an object is dependent on the position of an argument in an array then it is highly dependent. Much like the previous suggestion of delaying decision making radical changes need not be introduced immediately and instead a step can be made in the right direction. This could be as simple as wrapping such a structure in a Struct object as opposed to an Array. This is a step towards a dedicated class with a lightweight approach and will make it easier to identify where changes are required when the time arrives.
 
@@ -43,23 +40,15 @@ A logical next step could then be that a dedicated class is required in the futu
 
 ### Isolate Dependencies
 
--- quote --
+> "Quarantine each dependency"
 
 Isolating dependencies will keep your code loosely coupled and open to change. The following is a number of ways of achieving greater isolation. Encapsulation will prevent elements of a class from spreading at will. --move this down a paragraph to link in with rhe later paragraph -- Dependency injection (DI) will remove reference to a class by name which is itself a subtle dependency much like positional arguments. 
 
 -- Isolate positinal arguments as a dependency-- Keyword arguments can be used in place of positional arguments which are less likely to lead to confusion as all arguments of the method are visible on the sender as well as the receiver. This will also have benefits in testing as an mock object can stand in for a concrete implementation.
 
-"If you let class references fall where they may then your classes will resemble a woven mat rather than independent objects"
+> "If you let class references fall where they may then your classes will resemble a woven mat rather than independent objects"
 
-With DI the dependency on a particular class is replaced with one that assumes that an object implements an interface.
--- mive this under DI
-
-##
-
-check quote - "duck typing implements interfaces which reveal anstractions"
-
-Its important to be particularaly concious of classes that have lots of dependencies and are likely to change.
--- need to check that its not that many classes are dependent on this class.
+Its important to be particularaly concious of classes that have lots of dependents and are likely to change.
 
 The following graph provides a good abtract summary of the signs to look out for and equally the cases which are not as worrying. 
 
@@ -67,10 +56,9 @@ The following graph provides a good abtract summary of the signs to look out for
 
 The goal is to look to avoid situations in the top right where classes that are likely to change have many dependencies. Whereas all other states are more likely not as much of an issue as they do not have this dangerous combination.
 
--- quote of avoiding top right --
+> "Depend on things that change less often that you do."
 
 ## Dependencies
-
 - One of the benefits of using an interpreted language is that the dependency is on a class that implements an interface which is much more flexible
 If you are mindful of dependencies and develop a habit of routing injecting them, your classes will naturally be loosely coupled.
 
@@ -79,19 +67,18 @@ A class should be cohesive in that everything the class does should be highly re
 
 ## Abstraction -- move this below interfaces as interfaces reveal abstractions
 
--- quote on interfaces reavealing abstractions --
+> Duck typing reveals underlying abstractions that might otherwise be invisible.
 
 By implementing interfaces we may be able to arrive at a truly representative abstraction of a number of classes.
 -- check if abstraction applies across a number of types rather than being kust top of the tree --
 To be considered a good representative it is often best to have a number of sample cases that implement this abstraction rather than looking to build the abstraction prematurely.
-The wonderful thing about abstraction is that they represent common, stable qualities. Abstractions by their very nature tend to have many dependencies but will not change very much. Duck typing reveals abstractions that may otherwise not be visible. -- Here is the quote to cut out --
+The wonderful thing about abstraction is that they represent common, stable qualities. Abstractions by their very nature tend to have many dependencies but will not change very much.
 
 When it comes to abstractions it is better to have a sample of a number of similar classes to inform the creation of
 the abstract class.
   
 ## Interface Segregation ( I in SOLID)
-
--- quote on interfaces --
+> "The conversation between objects takes place using their interfaces"
 
 The conversation between objects takes place using their interfaces;
 In Solid principles the "I" stands for interface segregation. i.e. that larger interfaces should be split into smaller ones. Deciding on the messages that an object public responds to should be carefully considered. The more messages that it responds to, the more that can be sent to it and, back to our friend of dependencies once more, this will make things more likely to get out of hand.

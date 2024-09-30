@@ -430,4 +430,6 @@ But then I did think of that reference in Infinite Jest about pursuing excellenc
 This was very much me over the last little while but I will get better. 
 
 
-
+Monday 30th September
+Was struggling today with the lookaround characters in regex machine which I don't really understand all that much.
+The negative symbol is a lookaround character and so it behaves differently in the regex machine

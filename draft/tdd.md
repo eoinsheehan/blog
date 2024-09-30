@@ -47,5 +47,7 @@ Sources:
 This had the good analogy for test double
 https://www.honeybadger.io/blog/rspec-mocks/
 
-
+struggles:
+Today I found that I was trying to encapsulate some things in a factory which just added to the confusion.
+In this instance it seemed that being a little more verbose was more valuable
 
