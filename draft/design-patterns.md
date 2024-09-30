@@ -26,7 +26,7 @@ One of the challenges to object oriented design is that while there is guidance 
 
 Some advice that was initially surprising was that it can be better to delay design decisions. Even when there are some initial warning signs it can often be better to make a decision from a more informed viewpoint. In an environemnt where you are working towards an unknown future state a useful benchmark could be to be good enough rather than perfect. Then when the time comes to implement best practice this can have a subsequent benefit of revealing good design also.
 
-### Key takeaway: If the cost of delaying the decision is similar to the cost of changing right now then it is best to delay. A good example of this is if you have a method where the flow of control is managed based on the class of an object.
+If the cost of delaying the decision is similar to the cost of changing right now then it is best to delay. A good example of this is if you have a method where the flow of control is managed based on the class of an object.
 
 ## Dependencies
 The issue that can arise from the delaying design decision for too long is that the costs of change will have become very high. The more dependencies that an object has the more likely it is that changing such an object will be harder. When objects know too much they have expectations about the world they live in. 
@@ -42,14 +42,17 @@ A logical next step could then be that a dedicated class is required in the futu
 
 > "Quarantine each dependency"
 
-Isolating dependencies will keep your code loosely coupled and open to change. The following is a number of ways of achieving greater isolation. Encapsulation will prevent elements of a class from spreading at will. --move this down a paragraph to link in with rhe later paragraph -- Dependency injection (DI) will remove reference to a class by name which is itself a subtle dependency much like positional arguments. 
+Isolating dependencies will keep your code loosely coupled and open to change. The following is a number of ways of achieving greater isolation. Encapsulation will prevent elements of a class from spreading at will. One of the benefits of using an interpreted language is that the dependency is on a class that implements an interface which is much more flexible.
+If you are mindful of dependencies and develop a habit of routing injecting them, your classes will naturally be loosely coupled.
 
--- Isolate positinal arguments as a dependency-- Keyword arguments can be used in place of positional arguments which are less likely to lead to confusion as all arguments of the method are visible on the sender as well as the receiver. This will also have benefits in testing as an mock object can stand in for a concrete implementation.
+Keyword arguments can be used in place of positional arguments which are less likely to lead to confusion as all arguments of the method are visible on the sender as well as thereceiver.
+
+Dependency injection (DI) will remove reference to a class by name which is itself a subtle dependency much like positional arguments.
+This will also have benefits in testing as an mock object can stand in for a concrete implementation.
 
 > "If you let class references fall where they may then your classes will resemble a woven mat rather than independent objects"
 
 Its important to be particularaly concious of classes that have lots of dependents and are likely to change.
-
 The following graph provides a good abtract summary of the signs to look out for and equally the cases which are not as worrying. 
 
 -- Insert sketch of graph from book --
@@ -59,25 +62,11 @@ The goal is to look to avoid situations in the top right where classes that are 
 > "Depend on things that change less often that you do."
 
 ## Dependencies
-- One of the benefits of using an interpreted language is that the dependency is on a class that implements an interface which is much more flexible
-If you are mindful of dependencies and develop a habit of routing injecting them, your classes will naturally be loosely coupled.
 
 ## Single Responsibility
 A class should be cohesive in that everything the class does should be highly related to its purpose. Methods, like classes, should have a single responsibility. by keeping single responsibility with methods will assist when the time comes to make a new class. There is a link between single responsibility and dependencies. By virtue of the fact that classes have a single responsibility they will have to communicate with each other.
 
-## Abstraction -- move this below interfaces as interfaces reveal abstractions
-
-> Duck typing reveals underlying abstractions that might otherwise be invisible.
-
-By implementing interfaces we may be able to arrive at a truly representative abstraction of a number of classes.
--- check if abstraction applies across a number of types rather than being kust top of the tree --
-To be considered a good representative it is often best to have a number of sample cases that implement this abstraction rather than looking to build the abstraction prematurely.
-The wonderful thing about abstraction is that they represent common, stable qualities. Abstractions by their very nature tend to have many dependencies but will not change very much.
-
-When it comes to abstractions it is better to have a sample of a number of similar classes to inform the creation of
-the abstract class.
-  
-## Interface Segregation ( I in SOLID)
+## Interface Segregation
 > "The conversation between objects takes place using their interfaces"
 
 The conversation between objects takes place using their interfaces;
@@ -87,6 +76,18 @@ In Solid principles the "I" stands for interface segregation. i.e. that larger i
 - public interfaces should be throughly documented in tests.
 "You don’t send messages because you have objects, you have objects because you send messages."
 - in line with the public interface framing the sender should not be concerned with the internal implementation details rather that they get what they want at the end.
+
+## Abstraction
+
+> Duck typing reveals underlying abstractions that might otherwise be invisible.
+
+By implementing interfaces we may be able to arrive at a truly representative abstraction of a number of classes.
+-- check if abstraction applies across a number of types rather than being just top of the tree --
+To be considered a good representative it is often best to have a number of sample cases that implement this abstraction rather than looking to build the abstraction prematurely.
+The wonderful thing about abstraction is that they represent common, stable qualities. Abstractions by their very nature tend to have many dependencies but will not change very much.
+
+When it comes to abstractions it is better to have a sample of a number of similar classes to inform the creation of
+the abstract class.
 
 ## Things to look out for
 The following a some techniques to keep top of mind when looking to keep objects loosely coupled and open to change:
@@ -104,16 +105,3 @@ Inheritence is a specialisation
    - Ruby's version of multiple inheritance I suppose.
 - Use composition for has-a relationship
 
-## Notes
-#### Struct vs OpenStruct 
-Struct is more primative and and give you a quick means of defining a class
-Struct attributes are only defined at instantiation whereas OpenStruct is able to continue to be interacted with.
-
-#### Dependency injection
-- The instance is passed to the object rather than being created within the class.
-This makes it easier for testing
-
-#### Public/Private/Protected
-this is mildly interesting
-Protected methods allow explicit receivers as long as the receiver is self or an instance of the same class or subclass of self.
-implicit receiver is self which is the reference to the class which is in scope in that point in the application.
