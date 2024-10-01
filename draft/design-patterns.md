@@ -33,6 +33,7 @@ The issue that can arise from the delaying design decision for too long is that 
 
 ### Look to simplify the dependency
 > Just as you can use a method to wrap an instance variable, you can use the Ruby Struct class to wrap a structure.
+- move woven mat quote here
 
 If an object is dependent on the position of an argument in an array then it is highly dependent. Much like the previous suggestion of delaying decision making radical changes need not be introduced immediately and instead a step can be made in the right direction. This could be as simple as wrapping such a structure in a Struct object as opposed to an Array. This is a step towards a dedicated class with a lightweight approach and will make it easier to identify where changes are required when the time arrives.
 
@@ -51,10 +52,10 @@ If you are mindful of dependencies and develop a habit of routing injecting them
 This will also have benefits in testing as an mock object can stand in for a concrete implementation.
 
 > "If you let class references fall where they may then your classes will resemble a woven mat rather than independent objects"
+- move to here
+
 
 Its important to be particularaly concious of classes that have lots of dependents and are likely to change.
-
-- move to here
 
 The following graph provides a good abtract summary of the signs to look out for and equally the cases which are not as worrying. 
 
@@ -65,7 +66,7 @@ The goal is to look to avoid situations in the top right where classes that are 
 > "Depend on things that change less often that you do." - move this up
 
 ## Single Responsibility
-A class should be cohesive in that everything the class does should be highly related to its purpose. Methods, like classes, should have a single responsibility. by keeping single responsibility with methods will assist when the time comes to make a new class. There is a link between single responsibility and dependencies. By virtue of the fact that classes have a single responsibility they will have to communicate with each other.
+A class should be cohesive in that everything the class does should be highly related to its purpose. Methods, like classes, should have a single responsibility. by keeping single responsibility with methods will assist when the time comes to make a new class. There is a link between single responsibility and dependencies. By virtue of the fact that classes have a single responsibility they will have to communicate with each other. - grab a quote from this last line and put at top of this section
 
 ## Interface Segregation
 > "The conversation between objects takes place using their interfaces"
