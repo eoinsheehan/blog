@@ -6,7 +6,6 @@ What was missing was actually very apparent. A lack of practical knowledge for d
 
 That’s the state of affairs that led to me seeking, finding and reading Practical Object Oriented Design by Sandi Metz. Why this book? I’m working in ruby and it came well recommended by trusted senior colleagues as well as on the ultimate source of truth that is Reddit.
 
-As with all of these notes they are as much a reference for myself as for public consumption. A means of documenting my learnings in public and encouraging myself to build something useful at the same time. - move this to a more generic about page or whatever.
 
 I really liked how Metz makes it clear that as a junior dev starting out you will attempt to implement the guidance in the book incorrectly and in the wrong place but that over time the application of these principles will become more refined.
 
@@ -32,8 +31,7 @@ If the cost of delaying the decision is similar to the cost of changing right no
 The issue that can arise from the delaying design decision for too long is that the costs of change will have become very high. The more dependencies that an object has the more likely it is that changing such an object will be harder. When objects know too much they have expectations about the world they live in. 
 
 ### Look to simplify the dependency
-> Just as you can use a method to wrap an instance variable, you can use the Ruby Struct class to wrap a structure.
-- move woven mat quote here
+> "If you let class references fall where they may then your classes will resemble a woven mat rather than independent objects"
 
 If an object is dependent on the position of an argument in an array then it is highly dependent. Much like the previous suggestion of delaying decision making radical changes need not be introduced immediately and instead a step can be made in the right direction. This could be as simple as wrapping such a structure in a Struct object as opposed to an Array. This is a step towards a dedicated class with a lightweight approach and will make it easier to identify where changes are required when the time arrives.
 
@@ -51,9 +49,7 @@ If you are mindful of dependencies and develop a habit of routing injecting them
 **Dependency injection (DI)** will remove reference to a class by name which is itself a subtle dependency much like positional arguments.
 This will also have benefits in testing as an mock object can stand in for a concrete implementation.
 
-> "If you let class references fall where they may then your classes will resemble a woven mat rather than independent objects"
-- move to here
-
+> "Depend on things that change less often that you do."
 
 Its important to be particularaly concious of classes that have lots of dependents and are likely to change.
 
@@ -63,9 +59,9 @@ The following graph provides a good abtract summary of the signs to look out for
 
 The goal is to look to avoid situations in the top right where classes that are likely to change have many dependencies. Whereas all other states are more likely not as much of an issue as they do not have this dangerous combination.
 
-> "Depend on things that change less often that you do." - move this up
-
 ## Single Responsibility
+> "A single object cannot know everything, so inevitably it will have to talk to another object."
+
 A class should be cohesive in that everything the class does should be highly related to its purpose. Methods, like classes, should have a single responsibility. by keeping single responsibility with methods will assist when the time comes to make a new class. There is a link between single responsibility and dependencies. By virtue of the fact that classes have a single responsibility they will have to communicate with each other. - grab a quote from this last line and put at top of this section
 
 ## Interface Segregation

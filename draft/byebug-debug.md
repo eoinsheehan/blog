@@ -14,4 +14,4 @@ step moves into any invoked methods outside of the current frame if you want to 
 finish - execute until current stack frame returns
 continue - completes the entire execution
 
-
+This is pretty nice but really I should probably just use the debug gem from ruby instead.

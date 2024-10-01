@@ -433,3 +433,10 @@ This was very much me over the last little while but I will get better.
 Monday 30th September
 Was struggling today with the lookaround characters in regex machine which I don't really understand all that much.
 The negative symbol is a lookaround character and so it behaves differently in the regex machine
+
+
+Wednesday October 2nd
+Had some struggles implementing the builder pattern for legislation site but that all came together in the end and I'm not so intimidated by this type of work any longer.
+Then also had some thoughts overnight about conversion of objects to something that is usable for an api. This brought home for me how serialization works and the role it plays as a common format for other applications and languages to interact with.
+
+
