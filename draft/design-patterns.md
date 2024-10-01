@@ -42,24 +42,27 @@ A logical next step could then be that a dedicated class is required in the futu
 
 > "Quarantine each dependency"
 
-Isolating dependencies will keep your code loosely coupled and open to change. The following is a number of ways of achieving greater isolation. Encapsulation will prevent elements of a class from spreading at will. One of the benefits of using an interpreted language is that the dependency is on a class that implements an interface which is much more flexible.
+Isolating dependencies will keep your code loosely coupled and open to change. The following is a number of ways of achieving greater isolation. **Encapsulation** will prevent elements of a class from spreading at will. One of the benefits of using an interpreted language is that the dependency is on a class that implements an interface which is much more flexible.
 If you are mindful of dependencies and develop a habit of routing injecting them, your classes will naturally be loosely coupled.
 
-Keyword arguments can be used in place of positional arguments which are less likely to lead to confusion as all arguments of the method are visible on the sender as well as thereceiver.
+**Keyword arguments** can be used in place of positional arguments which are less likely to lead to confusion as all arguments of the method are visible on the sender as well as thereceiver.
 
-Dependency injection (DI) will remove reference to a class by name which is itself a subtle dependency much like positional arguments.
+**Dependency injection (DI)** will remove reference to a class by name which is itself a subtle dependency much like positional arguments.
 This will also have benefits in testing as an mock object can stand in for a concrete implementation.
 
 > "If you let class references fall where they may then your classes will resemble a woven mat rather than independent objects"
 
 Its important to be particularaly concious of classes that have lots of dependents and are likely to change.
+
+- move to here
+
 The following graph provides a good abtract summary of the signs to look out for and equally the cases which are not as worrying. 
 
 -- Insert sketch of graph from book --
 
 The goal is to look to avoid situations in the top right where classes that are likely to change have many dependencies. Whereas all other states are more likely not as much of an issue as they do not have this dangerous combination.
 
-> "Depend on things that change less often that you do."
+> "Depend on things that change less often that you do." - move this up
 
 ## Single Responsibility
 A class should be cohesive in that everything the class does should be highly related to its purpose. Methods, like classes, should have a single responsibility. by keeping single responsibility with methods will assist when the time comes to make a new class. There is a link between single responsibility and dependencies. By virtue of the fact that classes have a single responsibility they will have to communicate with each other.
@@ -90,10 +93,10 @@ the abstract class.
 ## Things to look out for
 The following a some techniques to keep top of mind when looking to keep objects loosely coupled and open to change:
 
-- DRY code tolerates change because any change in behavior can be made by changing code in just one place.
-- If you feel that a comment isnecessary this could be a candidate for moving behaviour into a dedicated method.
-- Either do not test private methods or, if you must, segregate those tests from the tests of public methods.
-- Strongly consider when chaining methods together to stay in line with the Law of Demeter ("only talk to your neighbour")
+- **DRY** code tolerates change because any change in behavior can be made by changing code in just one place.
+- If you feel that a comment is necessary this could be a candidate for moving behaviour into a dedicated method.
+- Either do not test **private methods** or, if you must, segregate those tests from the tests of public methods.
+- Strongly consider when chaining methods together to stay in line with the **Law of Demeter** ("only talk to your neighbour")
 - violations of the law of demeter are an indication that your public interfaces are lacking
 
 Inheritence is a specialisation
