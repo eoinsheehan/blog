@@ -61,8 +61,6 @@ The goal is to look to avoid situations in the top right where classes that are 
 
 > "Depend on things that change less often that you do."
 
-## Dependencies
-
 ## Single Responsibility
 A class should be cohesive in that everything the class does should be highly related to its purpose. Methods, like classes, should have a single responsibility. by keeping single responsibility with methods will assist when the time comes to make a new class. There is a link between single responsibility and dependencies. By virtue of the fact that classes have a single responsibility they will have to communicate with each other.
 
