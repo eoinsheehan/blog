@@ -55,12 +55,12 @@ Its important to be particularaly concious of classes that have lots of dependen
 
 The following graph provides a good abtract summary of the signs to look out for and equally the cases which are not as worrying. 
 
--- Insert sketch of graph from book --
+![Dependency management](images/ood.png)
 
 The goal is to look to avoid situations in the top right where classes that are likely to change have many dependencies. Whereas all other states are more likely not as much of an issue as they do not have this dangerous combination.
 
 ## Single Responsibility
-> "A single object cannot know everything, so inevitably it will have to talk to another object."
+> "Because well-designed objects have a single responsibility, their very nature requires that they collaborate to accomplish complex tasks."
 
 A class should be cohesive in that everything the class does should be highly related to its purpose. Methods, like classes, should have a single responsibility. by keeping single responsibility with methods will assist when the time comes to make a new class. There is a link between single responsibility and dependencies. By virtue of the fact that classes have a single responsibility they will have to communicate with each other. - grab a quote from this last line and put at top of this section
 
