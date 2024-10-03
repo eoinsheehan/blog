@@ -119,6 +119,26 @@ this restriction on the flow of data gives us more explicit control over it, res
 
 Ok so now that we know how data transfers between components then I suppose we need to say why this is useful.
 
+Prop destructuring
+A very commoon pattern you will come across in React is prop destructuring.
+instead of the props keyword as the parameter of the component you can pass you can assign values to a destructured version of the ojbect
+
+const obj = { a: 1, b: 2}
+const {a,b} = obj
+a will now equal 1
+b will now equal 2.
+
+we can also use default values for these deconstructed parameters in the event of them not being provided.
+
+You can also make use of Button.defaultProps to set the values for this component.
+
+Question: What is a Class Component?
+
+Ok so the next thing will be looking into state so that is probably a good stopping point.
+
+
+
+
 
 
 
