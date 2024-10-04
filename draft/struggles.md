@@ -439,4 +439,7 @@ Wednesday October 2nd
 Had some struggles implementing the builder pattern for legislation site but that all came together in the end and I'm not so intimidated by this type of work any longer.
 Then also had some thoughts overnight about conversion of objects to something that is usable for an api. This brought home for me how serialization works and the role it plays as a common format for other applications and languages to interact with.
 
+Friday October 4th
+Going to look into using git mergetool for resolving conflicts as this was a little slow when I was doing it myself
+
 
