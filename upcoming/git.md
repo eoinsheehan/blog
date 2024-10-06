@@ -183,3 +183,13 @@ But on a rebase, we switch side because the first thing a rebase does is to chec
 
 good article on mergetool switching here
 https://stackoverflow.com/questions/3051461/git-rebase-keeping-track-of-local-and-remote
+just started using git mergetool for the resolution of conflicts which I think will be a decent improvement on my workflow
+
+
+LOCAL, BASE and REMOTE are read-only buffers showing the contents of the conflicting file in specific commits ("commit you are merging into", "common ancestor commit" and "commit you are merging from" respectively)
+
+MERGED is a writable buffer where you have to resolve the conflicts (using the other read-only buffers as a reference). Once you are done, save and exit Vim as usual (:wq) or, if you want to abort, exit using :cq.
+
+Look into --
+It seems to be important that there are a number of head references in a git repo
+There is then one active head which is the reference of HEAD??
