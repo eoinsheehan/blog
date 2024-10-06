@@ -22,4 +22,7 @@ I got a bit addicted to this element which had long been removed as a limiting f
 
 But in reality I needed to focus on developing APIs to best practice, learning about database internals etc.
 
+i was having issues with my workflow if resolving merge conflicts in git after a revase using neovim so I looked onto that and got mergetool came to light which seems to be useful. after that it got me thinking about configiring my jnteractions with git via the command line so that js probably something that I should look into as well.
+
+
 
