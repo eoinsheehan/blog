@@ -174,3 +174,12 @@ how to tag a commit in github
 how to delete an existing tag on the remote
 
 `git push origin :refs/tags/<tagname>`
+
+You can look at git rebase as a way to perform multiple cherry-picks one after the other
+
+Indeed, Git can simply perform a fast-forward merge, as the history is completely linear 
+
+But on a rebase, we switch side because the first thing a rebase does is to checkout the upstream branch! (to replay the current commits on top of it)
+
+good article on mergetool switching here
+https://stackoverflow.com/questions/3051461/git-rebase-keeping-track-of-local-and-remote
