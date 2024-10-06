@@ -51,3 +51,8 @@ struggles:
 Today I found that I was trying to encapsulate some things in a factory which just added to the confusion.
 In this instance it seemed that being a little more verbose was more valuable
 
+I just discovered what the .rspec file does so I should mention that and it just slightly cleans up writing the rspec files
+
+also I think there is an option for a .rspec-local file which could be added to the .gitignore file and have like nice personal config.
+
+
