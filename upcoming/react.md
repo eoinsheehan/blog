@@ -136,6 +136,75 @@ Question: What is a Class Component?
 
 Ok so the next thing will be looking into state so that is probably a good stopping point.
 
+State is a component's memory
+
+useState is a hook that allows you to define the state of a functional component.
+It takes an initla value as a parameter and returns an array with two elements that we can destructure to get:
+1. The current state value
+2. A function to update the state value.
+
+How does state work in React?
+In React, when a component's state or props change, the component is destroyed and recreated from scratch.
+The entire component is recreated but this time the latest state value will be returned from useState. This process is called rerendering.
+
+whenever you set the value of state the associated component is rerendered.
+The initial state value is only used for the components first render and subsequently ignored.
+
+Hooks.
+Hooks are functions that let you use React features.
+All hooks are recognizable by the use prefix.
+
+Hooks can only be called from the top level of a functional component.
+Hooks can't be called from inside loops or conditionals.
+
+Managing and structuring state effectively is by far one of the most crucial parts of building your application.
+A general rule of thum is don't put values in state that can be calculated using existing values, state and/or props.
+
+If you are using reference-type values, such as objects and arrays, never mutate them.
+
+According to the React documentation we should trate state as if it was immutable. To change state, we should always use the setState function.
+This is because if we don't provide a new object to setState it is not guaranteed to re-render the page.
+
+setState use Object.is() to determine if the previou state is the same.
+
+State updates are asycnhronous. What this implies is that whenever you call setState function, React will apply the update in the next component render.
+Remember state varialbes aren't reactive, the component is N.B.
+
+before the rerender is actually triggered the new value of state will not be reflected.
+remember set state compares the objects and if they are different triggers a re render.
+
+The actual updating of the value happens then when then component is rendered.
+callbacks are functions which are passed as arguments and are evaluated at the end of the execution of a function.
+
+prevState is available when you use the functional means of updating known as a functional update.
+There are in fact many different implementations depending on the arguments passed for the useState hook.
+N.B. When a callback is passed to the setState function, it ensures that the latest state is passed in as an argument to the callback.
+
+If there are two calls to setState would this mean two rerenders?
+No react is smart and wherever possible it batches the state updates.
+
+Look into how react batches rerenders.
+Multiple state updates within a single event handler or lifecycle method are batched together.
+event handlers are javascript event handlers of course.
+lifecycle methods are those from within react.
+
+batching takes place within the current execution context which covers the above as well as all synchronous operations.
+
+React 18 introduced automatic batching for all updates regardless of where they originate which expanded to current execution context to include more scenarios.
+
+OK I'm on to the first project which is something to generate a CV so I should probably leave my learning there for today as I am tired...zzzz
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

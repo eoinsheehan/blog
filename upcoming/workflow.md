@@ -25,4 +25,18 @@ But in reality I needed to focus on developing APIs to best practice, learning a
 i was having issues with my workflow if resolving merge conflicts in git after a revase using neovim so I looked onto that and got mergetool came to light which seems to be useful. after that it got me thinking about configiring my jnteractions with git via the command line so that js probably something that I should look into as well.
 
 
+ok so today I learned that in vim I had been using visual line incorrectly.
+For columnar based operations I should have been using visual block mode as opposed to visual line mode which is specific to line based operations.
+e. indentation changed are actually block based operations
+but copying or deleting entrire lines are line based operations
+but actually I have just discovered that I should have been using the > sign for indentation on a line based operation.
+so not really sure what the use case is for visual block then
+although seems like in visual block mode you can also use this indentation sign
+
+Ok so I was doing a little bit of work to be able to use neovim with claude.
+this led me down the path of actually being comfortable interacting with neovim and its plugin manager lazy.
+I forked the modular version of kickstart and it was very easy to get set up with.
+
+I'm not sure how it works but anything in the lua/ directory is automatically availabe to be required within lua.
+Need to look into how lua itself actually comes with neovim.
 
